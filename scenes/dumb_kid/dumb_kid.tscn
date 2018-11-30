@@ -17,7 +17,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "collision" ]
 max_speed = 200
 min_distance = 600
-deadly_speed = 400
+deadly_speed = 350
 
 [node name="placeholder_rect" type="ColorRect" parent="." index="0"]
 
