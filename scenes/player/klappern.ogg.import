@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/klappern.ogg-286c3cd877dd8865676e0614d0fb342e.oggstr"
+
+[deps]
+
+source_file="res://scenes/player/klappern.ogg"
+dest_files=[ "res://.import/klappern.ogg-286c3cd877dd8865676e0614d0fb342e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -32,7 +32,6 @@ func _physics_process(delta):
 	var collision_info = move_and_collide(velocity * delta)
 	if collision_info:
 		var collider = collision_info.collider
-		print(collider.get_groups())
 		if "players" in collider.get_groups():
 			var collision_point = collision_info.position
 			var speed = (collision_info.collider_velocity - velocity).length()
