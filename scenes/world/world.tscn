@@ -42,7 +42,7 @@ _sections_unfolded = [ "Region", "Transform", "Visibility", "Z Index" ]
 [node name="player" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 200, 200 )
-_sections_unfolded = [ "Angular", "Linear", "Transform" ]
+_sections_unfolded = [ "Angular", "Collision", "Linear", "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="player" index="2"]
 
@@ -113,22 +113,18 @@ scale = Vector2( 3, 3 )
 [node name="dumb_kid" parent="dumb_kids" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( 97.28, 332.771 )
-deadly_speed = 350
 
 [node name="dumb_kid2" parent="dumb_kids" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( 492.203, 191.081 )
-deadly_speed = 350
 
 [node name="dumb_kid3" parent="dumb_kids" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( 428.895, 424.719 )
-deadly_speed = 350
 
 [node name="dumb_kid4" parent="dumb_kids" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 305.293, 85.5674 )
-deadly_speed = 350
 
 [connection signal="gift_count_changed" from="player" to="CanvasLayer/hud" method="update_gift_count"]
 

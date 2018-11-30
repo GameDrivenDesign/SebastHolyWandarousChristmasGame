@@ -8,7 +8,9 @@
 custom_solver_bias = 0.0
 extents = Vector2( 25, 25 )
 
-[node name="gift" type="Node2D"]
+[node name="gift" type="Node2D" groups=[
+"gifts",
+]]
 
 script = ExtResource( 1 )
 
