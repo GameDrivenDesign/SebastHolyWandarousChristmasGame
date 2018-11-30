@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10.5505, 10 )
 
-[node name="gift_projectile" type="RigidBody2D"]
+[node name="gift_projectile" type="RigidBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 8
@@ -25,11 +25,11 @@ contact_monitor = false
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
+linear_damp = 4.0
 angular_velocity = 0.0
-angular_damp = -1.0
+angular_damp = 4.0
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
