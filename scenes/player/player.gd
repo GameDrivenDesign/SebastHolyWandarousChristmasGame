@@ -6,6 +6,10 @@ export (float) var rotation_speed = 4.5
 var velocity = Vector2()
 var rotation_dir = 0
 
+var gift_count = 0
+
+signal gift_count_changed(n)
+
 func get_input():
 	rotation_dir = 0
 	velocity = Vector2()
@@ -25,3 +29,7 @@ func _physics_process(delta):
 	apply_impulse(Vector2(-$collision_shape.shape.extents.x / 2, 0.0), delta*Vector2(0.0, -rotation_dir*rotation_speed))
 
 	apply_impulse(Vector2(0.0, 0.0), delta*velocity)
+
+func pickup_gift():
+	gift_count += 1
+	emit_signal("gift_count_changed", gift_count)

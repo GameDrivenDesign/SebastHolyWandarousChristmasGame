@@ -8,7 +8,7 @@ var velocity = Vector2()
 var player
 
 func _ready():
-	player = get_parent().get_node("player")
+	player = get_parent().get_parent().get_node("player")
 
 func _process(delta):
 	velocity = Vector2(0.0, 0.0)
