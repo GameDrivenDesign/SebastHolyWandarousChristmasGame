@@ -1,5 +1,41 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
 
-[node name="Node" type="Node"]
+[ext_resource path="res://scenes/dumb_kid/dumb_kid.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="dumb_kid" type="KinematicBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+speed = 10
+
+[node name="placeholder_rect" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -10.0
+margin_top = -10.0
+margin_right = 10.0
+margin_bottom = 10.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 1 )
+
+[node name="collision_shape" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 2 )
 
 
