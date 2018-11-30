@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/gift/gift.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/snow/snow.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/hud/hud.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/world/background.png" type="Texture" id=1]
+[ext_resource path="res://scenes/hud/hud.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/snow/snow.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/gift/gift.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/dumb_kid/dumb_kid.tscn" type="PackedScene" id=6]
 
 [node name="map" type="Node2D"]
@@ -21,25 +21,29 @@ scroll_base_offset = Vector2( 0, 0 )
 scroll_base_scale = Vector2( 1, 1 )
 scroll_limit_begin = Vector2( 0, 0 )
 scroll_limit_end = Vector2( 0, 0 )
-scroll_ignore_camera_zoom = true
-_sections_unfolded = [ "Scroll" ]
+scroll_ignore_camera_zoom = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
 
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 2000, 2000 )
-_sections_unfolded = [ "Motion", "Transform", "Visibility" ]
+motion_mirroring = Vector2( 200, 100 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
+[node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
-position = Vector2( 1000, 1000 )
+self_modulate = Color( 0.871094, 0.871094, 0.871094, 1 )
 texture = ExtResource( 1 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 2000, 2000 )
-_sections_unfolded = [ "Region", "Transform", "Visibility", "Z Index" ]
+centered = false
+region_rect = Rect2( 0, 0, 1200, 600 )
 
-[node name="player" parent="." index="1" instance=ExtResource( 2 )]
+[node name="hud" parent="ParallaxBackground/ParallaxLayer" index="1" instance=ExtResource( 2 )]
+
+[node name="snow" parent="ParallaxBackground/ParallaxLayer" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 516.344, 281.44 )
+scale = Vector2( 3, 3 )
+
+[node name="player" parent="." index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 200, 200 )
 _sections_unfolded = [ "Angular", "Collision", "Linear", "Transform" ]
@@ -73,42 +77,27 @@ editor_draw_drag_margin = false
 
 editor/display_folded = true
 
-[node name="gift" parent="gifts" index="0" instance=ExtResource( 3 )]
+[node name="gift" parent="gifts" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 311, 230 )
 
-[node name="gift2" parent="gifts" index="1" instance=ExtResource( 3 )]
+[node name="gift2" parent="gifts" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 674, 391 )
 
-[node name="gift3" parent="gifts" index="2" instance=ExtResource( 3 )]
+[node name="gift3" parent="gifts" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( -190, 113 )
 
-[node name="gift4" parent="gifts" index="3" instance=ExtResource( 3 )]
+[node name="gift4" parent="gifts" index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 282, -99 )
 
-[node name="gift5" parent="gifts" index="4" instance=ExtResource( 3 )]
+[node name="gift5" parent="gifts" index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 266, 451 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="3"]
-
-layer = 1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-
-[node name="snow" parent="CanvasLayer" index="0" instance=ExtResource( 4 )]
-
-position = Vector2( 516.344, 281.44 )
-scale = Vector2( 3, 3 )
-
-[node name="hud" parent="CanvasLayer" index="1" instance=ExtResource( 5 )]
-
-[node name="dumb_kids" type="Node" parent="." index="4"]
+[node name="dumb_kids" type="Node" parent="." index="3"]
 
 [node name="dumb_kid" parent="dumb_kids" index="0" instance=ExtResource( 6 )]
 
@@ -126,6 +115,6 @@ position = Vector2( 428.895, 424.719 )
 
 position = Vector2( 305.293, 85.5674 )
 
-[connection signal="gift_count_changed" from="player" to="CanvasLayer/hud" method="update_gift_count"]
+[connection signal="gift_count_changed" from="player" to="ParallaxBackground/ParallaxLayer/hud" method="update_gift_count"]
 
 
