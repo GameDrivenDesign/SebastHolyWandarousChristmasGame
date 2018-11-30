@@ -3,7 +3,10 @@ extends KinematicBody2D
 export (int) var max_speed = 200
 export (int) var min_distance = 600
 
+export (int) var deadly_speed = 400
+
 var velocity = Vector2()
+var alive = true
 
 var player
 
@@ -12,6 +15,9 @@ func _ready():
 
 func _process(delta):
 	velocity = Vector2(0.0, 0.0)
+	
+	if !alive:
+		return
 	
 	var target_position = player.position
 	var direction = (target_position - position)
@@ -23,4 +29,12 @@ func _process(delta):
 	rotation = direction.angle()
 
 func _physics_process(delta):
-	move_and_collide(delta*velocity)
+	var collision_info = move_and_collide(velocity * delta)
+	if collision_info:
+		var collision_point = collision_info.position
+		var speed = (collision_info.collider_velocity - velocity).length()
+		if speed > deadly_speed:
+			$collision_shape.disabled = true
+			$placeholder_rect.color = Color(0.8, 0, 0)
+			alive = false
+			print("dumb kid killed")
