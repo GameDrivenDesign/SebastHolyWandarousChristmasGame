@@ -8,6 +8,8 @@ var rotation_dir = 0
 
 var gift_count = 0
 
+signal gift_count_changed(n)
+
 func get_input():
     rotation_dir = 0
     velocity = Vector2()
@@ -32,3 +34,4 @@ func _physics_process(delta):
 
 func pickup_gift():
 	gift_count += 1
+	emit_signal("gift_count_changed", gift_count)
