@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/player/player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://scenes/player/sled_loop.ogg" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="player" type="RigidBody2D" groups=[
+[node name="player" type="RigidBody2D" index="0" groups=[
 "players",
 ]]
 
@@ -44,5 +45,16 @@ texture = ExtResource( 2 )
 position = Vector2( -0.22524, -0.387931 )
 scale = Vector2( 3.16695, 3.21188 )
 shape = SubResource( 1 )
+
+[node name="sled_loop" type="AudioStreamPlayer2D" parent="." index="2"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

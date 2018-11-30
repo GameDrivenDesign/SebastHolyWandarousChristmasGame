@@ -10,6 +10,18 @@ var gift_count = 0
 
 signal gift_count_changed(n)
 
+func _ready():
+	pass
+	#$sled_loop
+
+func _process(delta):
+	var target_volume = velocity.length() - 8
+	$sled_loop.volume_db = $sled_loop.volume_db * (1.0 - delta*10) + target_volume * delta*10
+	
+	var target_pitch_scale = 1 + (velocity.length() / speed) / 4
+	$sled_loop.pitch_scale = $sled_loop.pitch_scale * (1.0 - delta*5) + target_pitch_scale * delta*5
+
+
 func get_input():
 	rotation_dir = 0
 	velocity = Vector2()
