@@ -7,7 +7,7 @@
 [ext_resource path="res://scenes/hud/hud.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/dumb_kid/dumb_kid.tscn" type="PackedScene" id=6]
 
-[node name="map" type="Node2D" index="0"]
+[node name="map" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
 

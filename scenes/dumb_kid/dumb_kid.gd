@@ -26,7 +26,7 @@ func _process(delta):
 	
 	velocity = float(direction.length() <= min_distance) * direction.normalized() * speed
 	
-	rotation = direction.angle()
+	look_at(player.position)
 
 func _physics_process(delta):
 	var collision_info = move_and_collide(velocity * delta)

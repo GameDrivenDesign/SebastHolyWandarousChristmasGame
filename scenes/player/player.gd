@@ -22,6 +22,15 @@ func get_input():
 	if Input.is_action_pressed('up'):
 		velocity = Vector2(0, -speed).rotated(rotation)
 
+	if Input.is_action_just_pressed('gift_projectile'):
+		var mouse = get_global_mouse_position()
+		var gift_direction = mouse - global_position
+		var gift_projectile = preload('res://scenes/gift/gift_projectile.tscn').instance()
+		gift_projectile.position = position
+		gift_projectile.rotation = gift_direction.angle() + PI/2
+		gift_projectile.apply_impulse(Vector2(0.0, 0.0), gift_direction)
+		get_parent().add_child(gift_projectile)
+
 func _physics_process(delta):
 	get_input()
 

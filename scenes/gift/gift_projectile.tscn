@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/gift/gift_projectile.gd" type="Script" id=1]
+[ext_resource path="res://scenes/gift/gift.svg" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10.5505, 10 )
+
+[node name="gift_projectile" type="RigidBody2D"]
+
+input_pickable = false
+collision_layer = 8
+collision_mask = 14
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 0, 4.41306 )
+scale = Vector2( 2.11334, 1.84165 )
+shape = SubResource( 1 )
+
+

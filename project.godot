@@ -24,6 +24,15 @@ up=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","de
  ]
 down=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
  ]
+gift_projectile=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="dumb_kid"
+2d_physics/layer_3="gift"
+2d_physics/layer_4="gift_projectile"
 
 [physics]
 
