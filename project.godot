@@ -11,6 +11,7 @@ config_version=3
 [application]
 
 config/name="SebastHolyWandarousChristmasGame"
+run/main_scene="res://scenes/world/world.tscn"
 config/icon="res://icon.png"
 
 [rendering]
