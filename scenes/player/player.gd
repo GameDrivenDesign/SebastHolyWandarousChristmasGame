@@ -10,6 +10,10 @@ var gift_count = 0
 
 var target_line = Line2D.new()
 
+
+var reins1_line = Line2D.new()
+var reins2_line = Line2D.new()
+
 signal gift_count_changed(n)
 
 func _ready():
@@ -17,6 +21,14 @@ func _ready():
 	target_line.add_point(Vector2(0.0, 0.0))
 	target_line.add_point(Vector2(0.0, 0.0))
 	add_child(target_line)
+	
+	reins1_line.add_point(Vector2(0.0, 0.0))
+	reins1_line.add_point(Vector2(0.0, 0.0))
+	reins2_line.add_point(Vector2(0.0, 0.0))
+	reins2_line.add_point(Vector2(0.0, 0.0))
+	add_child(reins1_line)
+	add_child(reins2_line)
+	
 	#$sled_loop
 
 func _process(delta):
@@ -35,7 +47,23 @@ func _process(delta):
 	var distance = (mouse - position).length()
 	
 	target_line.default_color = Color(float(gift_count <= 0) * 0.8, float(gift_count > 0) * 0.8, 0.0, clamp(0.001 * distance, 0.0, 0.6))
-
+	
+	var reins1_start = $RigidBody2D/pos_con_santa_l.global_position - position
+	var reins2_start = $RigidBody2D/pos_con_santa_r.global_position - position
+	var reins_end = $pos_con_deer.global_position - position
+	
+	reins1_line.rotation = -rotation
+	reins2_line.rotation = -rotation
+	
+	reins1_line.set_point_position(0, reins1_start)
+	reins1_line.set_point_position(1, reins_end)
+	reins2_line.set_point_position(0, reins2_start)
+	reins2_line.set_point_position(1, reins_end)
+	
+	reins1_line.default_color = Color(0.0, 0.0, 0.0)
+	reins1_line.width = 1
+	reins2_line.default_color = Color(0.0, 0.0, 0.0)
+	reins2_line.width = 1
 
 func get_input():
 	rotation_dir = 0
