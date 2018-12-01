@@ -48,6 +48,9 @@ func update_life_count(n):
 		$Control/MarginContainer/elements/hearts/heart_1.texture = gray_heart
 		$Control/MarginContainer/elements/hearts/heart_2.texture = gray_heart
 		$Control/MarginContainer/elements/hearts/heart_3.texture = gray_heart
+		var game_over_scene = preload("res://scenes/end/end_scene.tscn").instance()
+		game_over_scene.get_node("Label").text = "You lost"
+		get_tree().change_scene_to(game_over_scene)
 	else:
 		print("incorrect life count")
 
