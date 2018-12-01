@@ -22,7 +22,7 @@ extents = Vector2( 10.3469, 10 )
 
 input_pickable = false
 collision_layer = 32
-collision_mask = 7
+collision_mask = 5
 mode = 0
 mass = 0.01
 friction = 0.5
@@ -98,7 +98,7 @@ area_mask = 1
 position = Vector2( 0, 190 )
 input_pickable = false
 collision_layer = 32
-collision_mask = 35
+collision_mask = 33
 mode = 0
 mass = 0.03
 friction = 1.0
