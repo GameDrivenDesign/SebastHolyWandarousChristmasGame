@@ -109,3 +109,6 @@ func _physics_process(delta):
 func pickup_gift():
 	gift_count += 1
 	emit_signal("gift_count_changed", gift_count)
+
+func flash_siren():
+	$siren.flash(5)

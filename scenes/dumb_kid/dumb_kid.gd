@@ -54,6 +54,7 @@ func _physics_process(delta):
 				$placeholder_rect.color = Color(0.8, 0, 0)
 				alive = false
 				emit_signal("is_done", $name_container/name.text, is_good_kid, false)
+				collider.flash_siren()
 		if "gift_projectiles" in collider.get_groups():
 			var collision_point = collision_info.position
 			var speed = (collision_info.collider_velocity - velocity).length()
