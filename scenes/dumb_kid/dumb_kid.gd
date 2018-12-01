@@ -31,6 +31,8 @@ func _process(delta):
 	velocity = float(direction.length() <= min_distance) * direction.normalized() * speed
 	
 	look_at(player.position)
+	
+	$name_container.rotation = -rotation
 
 func _physics_process(delta):
 	var collision_info = move_and_collide(velocity * delta)
@@ -43,7 +45,7 @@ func _physics_process(delta):
 				$collision_shape.disabled = true
 				$placeholder_rect.color = Color(0.8, 0, 0)
 				alive = false
-				emit_signal("is_done", $name.text, false)
+				emit_signal("is_done", $name_container/name.text, false)
 		if "gift_projectiles" in collider.get_groups():
 			var collision_point = collision_info.position
 			var speed = (collision_info.collider_velocity - velocity).length()
@@ -51,13 +53,13 @@ func _physics_process(delta):
 			$placeholder_rect.color = Color(0.0, 0.8, 0)
 			alive = false
 			collider.queue_free()
-			emit_signal("is_done", $name.text, is_good_kid)
+			emit_signal("is_done", $name_container/name.text, is_good_kid)
 
 		# TODO: If hit by coal
 		# emit_signal("is_done", $name.text, not is_good_kid)
 
 func set_name(name):
-	$name.text = name
+	$name_container/name.text = name
 
 func set_is_good_kid(is_good):
 	is_good_kid = is_good

@@ -44,7 +44,9 @@ color = Color( 1, 1, 1, 1 )
 
 shape = SubResource( 1 )
 
-[node name="name" type="Label" parent="." index="2"]
+[node name="name_container" type="Node2D" parent="." index="2"]
+
+[node name="name" type="Label" parent="name_container" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
