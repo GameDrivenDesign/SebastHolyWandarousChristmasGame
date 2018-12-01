@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gift.svg-75c63b7867a9fb77b5a49cf1b1af22e7.stex"
+path="res://.import/gift1.svg-288efa8930c1670a9e582d6857f49b72.stex"
 
 [deps]
 
-source_file="res://scenes/gift/gift.svg"
-dest_files=[ "res://.import/gift.svg-75c63b7867a9fb77b5a49cf1b1af22e7.stex" ]
+source_file="res://scenes/gift/gift1.svg"
+dest_files=[ "res://.import/gift1.svg-288efa8930c1670a9e582d6857f49b72.stex" ]
 
 [params]
 
