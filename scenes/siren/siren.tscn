@@ -32,7 +32,7 @@ volume_db = 1.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "siren"
 
 [connection signal="tween_completed" from="tween1" to="." method="_on_tween1_completed"]
 
