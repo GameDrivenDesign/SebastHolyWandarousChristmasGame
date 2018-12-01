@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/hud/hud.gd" type="Script" id=1]
-[ext_resource path="res://fonts/font30.tres" type="DynamicFont" id=2]
-[ext_resource path="res://fonts/font20.tres" type="DynamicFont" id=3]
-[ext_resource path="res://theme.tres" type="Theme" id=4]
-[ext_resource path="res://scenes/credits/credits.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/hud/heart_red.svg" type="Texture" id=2]
+[ext_resource path="res://fonts/font30.tres" type="DynamicFont" id=3]
+[ext_resource path="res://fonts/font20.tres" type="DynamicFont" id=4]
+[ext_resource path="res://theme.tres" type="Theme" id=5]
+[ext_resource path="res://scenes/credits/credits.tscn" type="PackedScene" id=6]
 
-[node name="hud" type="Node"]
+[node name="hud" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -31,6 +32,7 @@ anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -20.0
+margin_top = 22.0
 margin_right = -22.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -46,8 +48,8 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 8.0
-margin_right = 218.0
-margin_bottom = 600.0
+margin_right = 264.0
+margin_bottom = 578.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -55,22 +57,111 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 alignment = 0
+_sections_unfolded = [ "Anchor" ]
 
-[node name="timer" type="Label" parent="Control/MarginContainer/elements" index="0"]
+[node name="hearts" type="HBoxContainer" parent="Control/MarginContainer/elements" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 210.0
-margin_bottom = 49.0
+margin_right = -111.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="heart_1" type="TextureRect" parent="Control/MarginContainer/elements/hearts" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 60.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 0
+_sections_unfolded = [ "Margin" ]
+
+[node name="heart_2" type="TextureRect" parent="Control/MarginContainer/elements/hearts" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 64.0
+margin_right = 124.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 0
+
+[node name="heart_3" type="TextureRect" parent="Control/MarginContainer/elements/hearts" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 128.0
+margin_right = 188.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 0
+
+[node name="HSeparator4" type="HSeparator" parent="Control/MarginContainer/elements" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 55.0
+margin_right = 256.0
+margin_bottom = 59.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="timer" type="Label" parent="Control/MarginContainer/elements" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 63.0
+margin_right = 256.0
+margin_bottom = 112.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Time remaining: 60"
 align = 2
@@ -79,22 +170,22 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Anchor", "Margin", "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="gift_counter" type="Label" parent="Control/MarginContainer/elements" index="1"]
+[node name="gift_counter" type="Label" parent="Control/MarginContainer/elements" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 53.0
-margin_right = 210.0
-margin_bottom = 102.0
+margin_top = 116.0
+margin_right = 256.0
+margin_bottom = 165.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Gifts collected: 42"
 align = 2
@@ -103,15 +194,15 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Grow Direction", "Margin", "custom_fonts" ]
 
-[node name="HSeparator" type="HSeparator" parent="Control/MarginContainer/elements" index="2"]
+[node name="HSeparator" type="HSeparator" parent="Control/MarginContainer/elements" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 106.0
-margin_right = 210.0
-margin_bottom = 110.0
+margin_top = 169.0
+margin_right = 256.0
+margin_bottom = 173.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -119,22 +210,22 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Label" type="Label" parent="Control/MarginContainer/elements" index="3"]
+[node name="Label" type="Label" parent="Control/MarginContainer/elements" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 114.0
-margin_right = 210.0
-margin_bottom = 163.0
+margin_top = 177.0
+margin_right = 256.0
+margin_bottom = 226.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Good Children"
 align = 1
@@ -142,15 +233,15 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="good_children" type="GridContainer" parent="Control/MarginContainer/elements" index="4"]
+[node name="good_children" type="GridContainer" parent="Control/MarginContainer/elements" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 167.0
-margin_right = 210.0
-margin_bottom = 200.0
+margin_top = 230.0
+margin_right = 256.0
+margin_bottom = 263.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -165,7 +256,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 103.0
+margin_right = 126.0
 margin_bottom = 33.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -173,7 +264,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Wanda"
 align = 1
@@ -187,8 +278,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 107.0
-margin_right = 210.0
+margin_left = 130.0
+margin_right = 256.0
 margin_bottom = 33.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -196,7 +287,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Sebastian"
 align = 1
@@ -204,22 +295,22 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Label2" type="Label" parent="Control/MarginContainer/elements" index="5"]
+[node name="Label2" type="Label" parent="Control/MarginContainer/elements" index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 204.0
-margin_right = 210.0
-margin_bottom = 253.0
+margin_top = 267.0
+margin_right = 256.0
+margin_bottom = 316.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Bad Children"
 align = 1
@@ -227,15 +318,15 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="HSeparator2" type="HSeparator" parent="Control/MarginContainer/elements" index="6"]
+[node name="HSeparator2" type="HSeparator" parent="Control/MarginContainer/elements" index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 257.0
-margin_right = 210.0
-margin_bottom = 261.0
+margin_top = 320.0
+margin_right = 256.0
+margin_bottom = 324.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -243,15 +334,15 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="bad_children" type="GridContainer" parent="Control/MarginContainer/elements" index="7"]
+[node name="bad_children" type="GridContainer" parent="Control/MarginContainer/elements" index="9"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 265.0
-margin_right = 210.0
-margin_bottom = 298.0
+margin_top = 328.0
+margin_right = 256.0
+margin_bottom = 361.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -266,7 +357,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 103.0
+margin_right = 126.0
 margin_bottom = 33.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -274,7 +365,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Christian"
 align = 1
@@ -288,8 +379,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 107.0
-margin_right = 210.0
+margin_left = 130.0
+margin_right = 256.0
 margin_bottom = 33.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -297,7 +388,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Leo"
 align = 1
@@ -305,15 +396,15 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="HSeparator3" type="HSeparator" parent="Control/MarginContainer/elements" index="8"]
+[node name="HSeparator3" type="HSeparator" parent="Control/MarginContainer/elements" index="10"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 302.0
-margin_right = 210.0
-margin_bottom = 306.0
+margin_top = 365.0
+margin_right = 256.0
+margin_bottom = 369.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -321,15 +412,15 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="credits_button" type="Button" parent="Control/MarginContainer/elements" index="9"]
+[node name="credits_button" type="Button" parent="Control/MarginContainer/elements" index="11"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 310.0
-margin_right = 210.0
-margin_bottom = 365.0
+margin_top = 373.0
+margin_right = 256.0
+margin_bottom = 428.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -337,7 +428,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 4 )
+theme = ExtResource( 5 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -346,7 +437,7 @@ text = "Credits"
 flat = true
 align = 1
 
-[node name="credits" parent="." index="1" instance=ExtResource( 5 )]
+[node name="credits" parent="." index="1" instance=ExtResource( 6 )]
 
 visible = false
 
