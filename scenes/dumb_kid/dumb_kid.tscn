@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/dumb_kid/dumb_kid.gd" type="Script" id=1]
 [ext_resource path="res://fonts/font20.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scenes/dumb_kid/kid_blue.svg" type="Texture" id=3]
 [ext_resource path="res://scenes/dumb_kid/aua.ogg" type="AudioStream" id=4]
+[ext_resource path="res://scenes/dumb_kid/win.ogg" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -87,6 +88,17 @@ _sections_unfolded = [ "Transform" ]
 stream = ExtResource( 4 )
 volume_db = 0.0
 pitch_scale = 0.8
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="yay" type="AudioStreamPlayer2D" parent="." index="5"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0
 attenuation = 1.0

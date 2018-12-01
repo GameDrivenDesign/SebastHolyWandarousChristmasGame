@@ -65,6 +65,8 @@ func _physics_process(delta):
 			$placeholder_rect.color = Color(0.0, 0.8, 0)
 			alive = false
 			got_gift = true
+			if is_good_kid:
+				$yay.play()
 			collider.queue_free()
 			emit_signal("is_done", $name_container/name.text, is_good_kid, true)
 

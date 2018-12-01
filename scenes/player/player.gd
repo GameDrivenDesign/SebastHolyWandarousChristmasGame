@@ -120,4 +120,6 @@ func kid_done(name, is_good_kid, got_present):
 	if is_good_kid and !got_present:
 		flash_siren()
 		life_count -= 1
+		if life_count <= 1:
+			$heartbeat.play()
 		emit_signal("life_count_changed" ,life_count)

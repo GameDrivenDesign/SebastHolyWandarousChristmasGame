@@ -21,7 +21,7 @@ func _ready():
 	var gifts = $gifts
 	var dumb_kids = $dumb_kids
 	
-	var map_size = Vector2(120*50, 100*50)
+	var map_size = Vector2(120*50, 60*50)
 	
 	var quadrant_size = 6 * 50
 	for xi in range(map_size.x / quadrant_size):
