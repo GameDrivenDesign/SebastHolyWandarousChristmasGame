@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/world/world.gd" type="Script" id=1]
 [ext_resource path="res://scenes/world/background.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/gift/gift.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/dumb_kid/dumb_kid.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/tree/tree.tscn" type="PackedScene" id=8]
 
 [node name="map" type="Node2D"]
 
@@ -78,8 +79,6 @@ editor_draw_drag_margin = false
 
 [node name="gifts" type="Node" parent="." index="2"]
 
-editor/display_folded = true
-
 [node name="gift" parent="gifts" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( 311, 230 )
@@ -121,6 +120,32 @@ got_gift = false
 
 position = Vector2( 538.931, 62.9573 )
 got_gift = false
+
+[node name="trees" type="Node" parent="." index="4"]
+
+[node name="tree1" parent="trees" index="0" instance=ExtResource( 8 )]
+
+position = Vector2( 363.269, 271.321 )
+
+[node name="tree2" parent="trees" index="1" instance=ExtResource( 8 )]
+
+position = Vector2( 529.076, 39.0636 )
+
+[node name="tree3" parent="trees" index="2" instance=ExtResource( 8 )]
+
+position = Vector2( 756.685, 250.218 )
+
+[node name="tree4" parent="trees" index="3" instance=ExtResource( 8 )]
+
+position = Vector2( 961.683, 621.024 )
+
+[node name="tree5" parent="trees" index="4" instance=ExtResource( 8 )]
+
+position = Vector2( -27.132, 437.128 )
+
+[node name="tree6" parent="trees" index="5" instance=ExtResource( 8 )]
+
+position = Vector2( -37.2021, 34.3233 )
 
 [connection signal="gift_count_changed" from="player" to="ParallaxBackground/ParallaxLayer/hud" method="update_gift_count"]
 

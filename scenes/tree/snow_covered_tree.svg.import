@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/snow_covered_tree.svg-5152a34902d3250bf0485baeb34659f5.stex"
+path="res://.import/snow_covered_tree.svg-e31ac009482154b1ad5ac7fc39ae6d0a.stex"
 
 [deps]
 
-source_file="res://scenes/world/snow_covered_tree.svg"
-dest_files=[ "res://.import/snow_covered_tree.svg-5152a34902d3250bf0485baeb34659f5.stex" ]
+source_file="res://scenes/tree/snow_covered_tree.svg"
+dest_files=[ "res://.import/snow_covered_tree.svg-e31ac009482154b1ad5ac7fc39ae6d0a.stex" ]
 
 [params]
 
