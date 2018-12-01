@@ -51,7 +51,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 2972.18, 1346.04 )
 _sections_unfolded = [ "Angular", "Collision", "Linear", "Transform" ]
-rotation_speed = 4.5
+rotation_speed = 8.1
 
 [node name="Camera2D" type="Camera2D" parent="player" index="2"]
 
