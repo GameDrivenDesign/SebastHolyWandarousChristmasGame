@@ -4,7 +4,7 @@
 [ext_resource path="res://fonts/font30.tres" type="DynamicFont" id=2]
 [ext_resource path="res://fonts/font20.tres" type="DynamicFont" id=3]
 
-[node name="hud" type="Node" index="0"]
+[node name="hud" type="Node"]
 
 script = ExtResource( 1 )
 
