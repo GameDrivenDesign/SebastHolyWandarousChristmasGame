@@ -14,7 +14,7 @@ extents = Vector2( 10, 10 )
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10.3469, 10 )
+extents = Vector2( 8.0004, 10 )
 
 [node name="player" type="RigidBody2D" index="0" groups=[
 "players",
@@ -24,7 +24,7 @@ input_pickable = false
 collision_layer = 32
 collision_mask = 5
 mode = 0
-mass = 0.01
+mass = 0.02
 friction = 0.5
 bounce = 0.0
 gravity_scale = 1.0
@@ -40,7 +40,7 @@ angular_velocity = 0.0
 angular_damp = 2.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Collision", "Linear" ]
-speed = 10
+speed = 21
 rotation_speed = 4.5
 
 [node name="sprite" type="Sprite" parent="." index="0"]
@@ -60,6 +60,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Light2D" type="Light2D" parent="." index="2"]
 
 visible = false
+scale = Vector2( 1.5, 1.5 )
 enabled = true
 editor_only = false
 texture = ExtResource( 3 )
@@ -81,6 +82,7 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
+_sections_unfolded = [ "Transform" ]
 
 [node name="sled_loop" type="AudioStreamPlayer2D" parent="." index="3"]
 
@@ -95,13 +97,13 @@ area_mask = 1
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." index="4"]
 
-position = Vector2( 0, 190 )
+position = Vector2( 0, 180 )
 input_pickable = false
 collision_layer = 32
 collision_mask = 33
 mode = 0
 mass = 0.03
-friction = 1.0
+friction = 0.7
 bounce = 0.0
 gravity_scale = 1.0
 custom_integrator = false
@@ -119,37 +121,37 @@ _sections_unfolded = [ "Angular", "Collision", "Linear", "Transform" ]
 [node name="schlitten" type="Sprite" parent="RigidBody2D" index="0"]
 
 light_mask = 2
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" index="1"]
 
-position = Vector2( 0, 7 )
-scale = Vector2( 3.76923, 6.42308 )
+position = Vector2( 0, 7.15503 )
+scale = Vector2( 3.76923, 5.61142 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="pos_con_santa_l" type="Position2D" parent="RigidBody2D" index="2"]
 
-position = Vector2( -23, -31 )
+position = Vector2( -19, -26 )
 scale = Vector2( 0.3, 0.3 )
 
 [node name="pos_con_santa_r" type="Position2D" parent="RigidBody2D" index="3"]
 
-position = Vector2( 24.2844, -30.1461 )
+position = Vector2( 20.2844, -25.1461 )
 scale = Vector2( 0.3, 0.3 )
 
 [node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="." index="5"]
 
 node_a = NodePath("..")
 node_b = NodePath("../RigidBody2D")
-bias = 0.2
+bias = 0.5
 disable_collision = false
-length = 70.0
+length = 55.0
 rest_length = 0.0
-stiffness = 20.0
-damping = 1.0
+stiffness = 10.0
+damping = 0.7
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="pos_con_deer" type="Position2D" parent="." index="6"]
