@@ -10,6 +10,7 @@ export (bool) var alive = true
 export (bool) var got_gift = false
 
 var player
+var sleigh
 
 export (bool) var is_good_kid = true
 
@@ -23,6 +24,7 @@ const images = [
 
 func _ready():
 	player = get_parent().get_parent().get_node("player")
+	sleigh = player.get_node("RigidBody2D")
 	$Sprite.set_texture(images[randi() % images.size()])
 
 func _process(delta):
@@ -31,14 +33,14 @@ func _process(delta):
 	if !alive:
 		return
 	
-	var target_position = player.position
+	var target_position = sleigh.global_position
 	var direction = (target_position - position)
 	
 	var speed = ((min_distance - direction.length()) / min_distance) * max_speed
 	
 	velocity = float(direction.length() <= min_distance) * direction.normalized() * speed
 	
-	look_at(player.position)
+	look_at(target_position)
 	
 	$name_container.rotation = -rotation
 
