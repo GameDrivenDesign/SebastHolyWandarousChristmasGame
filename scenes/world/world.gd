@@ -13,4 +13,4 @@ func _ready():
 		var kid = kids[i]
 		kid.set_name(name)
 		kid.set_is_good_kid(bool(randi() % 2))
-		kid.connect("is_done", hud, "kid_done")
+		hud.add_kid(kid)
