@@ -22,6 +22,7 @@ max_speed = 200
 min_distance = 600
 deadly_speed = 350
 alive = true
+got_gift = false
 is_good_kid = true
 
 [node name="placeholder_rect" type="ColorRect" parent="." index="0"]

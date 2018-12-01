@@ -7,6 +7,7 @@ export (int) var deadly_speed = 350
 
 var velocity = Vector2()
 export (bool) var alive = true
+export (bool) var got_gift = false
 
 var player
 
@@ -52,6 +53,7 @@ func _physics_process(delta):
 			$collision_shape.disabled = true
 			$placeholder_rect.color = Color(0.0, 0.8, 0)
 			alive = false
+			got_gift = true
 			collider.queue_free()
 			emit_signal("is_done", $name_container/name.text, is_good_kid, true)
 
