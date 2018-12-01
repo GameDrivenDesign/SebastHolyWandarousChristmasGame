@@ -6,6 +6,8 @@ onready var hud = $ParallaxBackground/ParallaxLayer/hud
 var kids
 
 func _ready():
+	randomize()
+	
 	kids = get_tree().get_nodes_in_group("dumb_kids")
 	
 	var names = name_generator.get_random_names(kids.size())
