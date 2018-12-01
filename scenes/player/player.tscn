@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/player/player.gd" type="Script" id=1]
 [ext_resource path="res://scenes/player/Rentiere.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/player/RigidBody2D.gd" type="Script" id=5]
 [ext_resource path="res://scenes/player/Schlitten.png" type="Texture" id=6]
 [ext_resource path="res://scenes/siren/siren.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/player/heartbeat.ogg" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -18,7 +19,7 @@ extents = Vector2( 6.15845, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 8.0004, 10 )
 
-[node name="player" type="RigidBody2D" groups=[
+[node name="player" type="RigidBody2D" index="0" groups=[
 "players",
 ]]
 
@@ -43,7 +44,7 @@ angular_damp = 2.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Collision", "Linear" ]
 speed = 21
-rotation_speed = 8
+rotation_speed = 4.5
 life_count = 3
 
 [node name="sprite" type="Sprite" parent="." index="0"]
@@ -165,5 +166,16 @@ scale = Vector2( 0.3, 0.3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="siren" parent="." index="7" instance=ExtResource( 7 )]
+
+[node name="heartbeat" type="AudioStreamPlayer2D" parent="." index="8"]
+
+stream = ExtResource( 8 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 
