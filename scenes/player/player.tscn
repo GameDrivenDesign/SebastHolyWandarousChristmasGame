@@ -1,16 +1,22 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/player/player.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://scenes/player/Rentiere.png" type="Texture" id=2]
 [ext_resource path="res://scenes/player/light.png" type="Texture" id=3]
 [ext_resource path="res://scenes/player/sled_loop.ogg" type="AudioStream" id=4]
+[ext_resource path="res://scenes/player/Schlitten.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="player" type="RigidBody2D" groups=[
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10.3469, 10 )
+
+[node name="player" type="RigidBody2D" index="0" groups=[
 "players",
 ]]
 
@@ -40,13 +46,16 @@ rotation_speed = 4.5
 [node name="sprite" type="Sprite" parent="." index="0"]
 
 light_mask = 0
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="collision_shape" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -0.22524, -0.387931 )
-scale = Vector2( 3.16695, 3.21188 )
+position = Vector2( 1.50006, 11.6833 )
+scale = Vector2( 2.42308, 2.28333 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Light2D" type="Light2D" parent="." index="2"]
 
@@ -82,5 +91,41 @@ max_distance = 2000.0
 attenuation = 1.0
 bus = "Master"
 area_mask = 1
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." index="4"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+
+[node name="schlitten" type="Sprite" parent="RigidBody2D" index="0"]
+
+light_mask = 2
+position = Vector2( 9.53674e-07, 169 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" index="1"]
+
+position = Vector2( 6.19888e-05, 175.5 )
+scale = Vector2( 3.76923, 6.42308 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 
