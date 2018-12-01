@@ -8,10 +8,14 @@ var rotation_dir = 0
 
 var gift_count = 0
 
+var target_line = Line2D.new()
+
 signal gift_count_changed(n)
 
 func _ready():
-	pass
+	target_line.add_point(Vector2(0.0, 0.0))
+	target_line.add_point(Vector2(0.0, 0.0))
+	add_child(target_line)
 	#$sled_loop
 
 func _process(delta):
@@ -20,6 +24,16 @@ func _process(delta):
 	
 	var target_pitch_scale = 1 + (velocity.length() / speed) / 4
 	$sled_loop.pitch_scale = $sled_loop.pitch_scale * (1.0 - delta*5) + target_pitch_scale * delta*5
+	
+	var mouse = get_global_mouse_position()
+	target_line.set_global_position(Vector2(0.0, 0.0))
+	target_line.rotation = -rotation
+	target_line.set_point_position(0, position)
+	target_line.set_point_position(1, mouse)
+	
+	var distance = (mouse - position).length()
+	
+	target_line.default_color = Color(float(gift_count <= 0) * 0.8, float(gift_count > 0) * 0.8, 0.0, clamp(0.001 * distance, 0.0, 0.6))
 
 
 func get_input():
