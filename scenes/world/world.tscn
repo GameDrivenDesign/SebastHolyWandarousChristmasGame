@@ -31,6 +31,7 @@ scroll_ignore_camera_zoom = false
 motion_scale = Vector2( 1, 1 )
 motion_offset = Vector2( 0, 0 )
 motion_mirroring = Vector2( 200, 100 )
+_sections_unfolded = [ "Material", "Motion", "Visibility" ]
 
 [node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
@@ -43,8 +44,9 @@ region_rect = Rect2( 0, 0, 1200, 600 )
 
 [node name="snow" parent="ParallaxBackground/ParallaxLayer" index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 516.344, 281.44 )
-scale = Vector2( 3, 3 )
+position = Vector2( 1000, 1000 )
+scale = Vector2( 2.5, 2.5 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="player" parent="." index="1" instance=ExtResource( 5 )]
 
