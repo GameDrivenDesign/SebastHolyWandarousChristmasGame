@@ -62,6 +62,8 @@ func _ready():
 func kid_done(name, is_good_kid, got_present):
 	print("World: Kid with name " + name + " is done: good:" + str(is_good_kid) + ", present: " + str(got_present))
 	update_kid_display()
+	if is_good_kid and !got_present:
+		$player.flash_siren()
 
 func update_kid_display():
 	hud.remove_all_dumb_kids()
