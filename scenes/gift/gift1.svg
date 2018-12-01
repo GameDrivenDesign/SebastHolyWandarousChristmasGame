@@ -15,7 +15,10 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.1 r15371"
-   sodipodi:docname="gift.svg">
+   sodipodi:docname="gift1.svg"
+   inkscape:export-filename="C:\Users\cmfcm\Desktop\SebastHolyWandarousChristmasGame\scenes\gift\gift.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
   <defs
      id="defs2">
     <inkscape:path-effect
@@ -50,18 +53,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6"
-     inkscape:cx="29.548534"
-     inkscape:cy="31.461232"
+     inkscape:zoom="32"
+     inkscape:cx="26.159651"
+     inkscape:cy="31.456172"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
-     inkscape:window-width="1108"
-     inkscape:window-height="840"
-     inkscape:window-x="-7"
-     inkscape:window-y="40"
-     inkscape:window-maximized="0" />
+     inkscape:window-width="1368"
+     inkscape:window-height="849"
+     inkscape:window-x="-8"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -122,11 +125,11 @@
        inkscape:path-effect="#path-effect4551-5"
        inkscape:original-d="m 6.6051336,286.46391 c 0.3393141,0.0413 0.587512,0.0945 0.8976936,0.0945 0.3273037,0 1.36948,0.14243 1.559152,-0.0472 1.0172248,-1.01723 -0.541425,-2.43514 -1.27567,-1.7009 -0.4816856,0.48169 -0.6207588,1.23334 -1.1811756,1.65365 z" />
     <rect
-       style="opacity:1;fill:#7a0000;fill-opacity:1;stroke:none;stroke-width:1.40947902;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:15.60000038;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:#7a0000;fill-opacity:1;stroke:none;stroke-width:1.43139827;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:15.60000038;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect4487-5"
        width="2.6473942"
-       height="1.3189268"
+       height="1.360268"
        x="5.2908864"
-       y="288.92276" />
+       y="288.90622" />
   </g>
 </svg>

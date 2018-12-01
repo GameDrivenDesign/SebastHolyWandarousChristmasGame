@@ -59,6 +59,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Light2D" type="Light2D" parent="." index="2"]
 
+visible = false
 enabled = true
 editor_only = false
 texture = ExtResource( 3 )

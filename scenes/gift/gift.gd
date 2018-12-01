@@ -1,19 +1,13 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+const images = [
+	preload("res://scenes/gift/gift1.svg"),
+	preload("res://scenes/gift/gift2.svg"),
+	preload("res://scenes/gift/gift3.svg")
+]
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
-
+	$Sprite.set_texture(images[randi() % images.size()])
 
 func _on_body_entered(body):
 	if body.is_in_group("players"):
