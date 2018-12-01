@@ -42,8 +42,9 @@ angular_velocity = 0.0
 angular_damp = 2.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Collision", "Linear" ]
-speed = 20
-rotation_speed = 8.0
+speed = 21
+rotation_speed = 8
+life_count = 3
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 

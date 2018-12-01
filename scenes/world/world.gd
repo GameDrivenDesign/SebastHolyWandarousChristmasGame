@@ -6,6 +6,15 @@ onready var hud = $ParallaxBackground/ParallaxLayer/hud
 var kids
 
 func _ready():
+	if OS.has_feature('JavaScript'):
+		# Maximize game in browsers, because fullscreen
+		# requires extra permissions
+		OS.window_maximized = true
+	elif not OS.is_debug_build():
+		# Go fullscreen on desktop, but not when running
+		# a debug build.
+		OS.window_fullscreen = true
+	
 	randomize()
 	
 	var trees = $trees
@@ -36,16 +45,23 @@ func _ready():
 				gifts.add_child(gift)
 
 		
-	var kid_quadrant_size = 30*50
+#	var kid_quadrant_size = 30*50
 		
-	for xi in range(map_size.x / kid_quadrant_size):
-		for yi in range(map_size.y / kid_quadrant_size):
-			var kid = preload("res://scenes/dumb_kid/dumb_kid.tscn").instance()
-			kid.global_position = Vector2(
-				xi * kid_quadrant_size + rand_range(0, kid_quadrant_size / 2),
-				yi * kid_quadrant_size + rand_range(0, kid_quadrant_size / 2)
-			)
-			dumb_kids.add_child(kid)
+#	for xi in range(map_size.x / kid_quadrant_size):
+#		for yi in range(map_size.y / kid_quadrant_size):
+#			var kid = preload("res://scenes/dumb_kid/dumb_kid.tscn").instance()
+#			kid.global_position = Vector2(
+#				xi * kid_quadrant_size + rand_range(0, kid_quadrant_size / 2),
+#				yi * kid_quadrant_size + rand_range(0, kid_quadrant_size / 2)
+#			)
+#			dumb_kids.add_child(kid)
+	for i in range(20):
+		var kid = preload("res://scenes/dumb_kid/dumb_kid.tscn").instance()
+		kid.global_position = Vector2(
+			rand_range(10, map_size.x - 10),
+			rand_range(10, map_size.y - 10)
+		)
+		dumb_kids.add_child(kid)
 
 	kids = get_tree().get_nodes_in_group("dumb_kids")
 	
@@ -62,8 +78,7 @@ func _ready():
 func kid_done(name, is_good_kid, got_present):
 	print("World: Kid with name " + name + " is done: good:" + str(is_good_kid) + ", present: " + str(got_present))
 	update_kid_display()
-	if is_good_kid and !got_present:
-		$player.flash_siren()
+	$player.kid_done(name, is_good_kid, got_present)
 
 func update_kid_display():
 	hud.remove_all_dumb_kids()

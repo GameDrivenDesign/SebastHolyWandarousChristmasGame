@@ -27,6 +27,29 @@ func _process(delta):
 
 func update_gift_count(n):
 	gift_counter.text = 'Gifts collected: ' + str(n)
+	
+func update_life_count(n):
+	var red_heart = preload("res://scenes/hud/heart_red.svg")
+	var gray_heart = preload("res://scenes/hud/heart_gray.svg")
+	
+	if n == 3:
+		$Control/MarginContainer/elements/hearts/heart_1.texture = red_heart
+		$Control/MarginContainer/elements/hearts/heart_2.texture = red_heart
+		$Control/MarginContainer/elements/hearts/heart_3.texture = red_heart
+	elif n == 2:
+		$Control/MarginContainer/elements/hearts/heart_1.texture = red_heart
+		$Control/MarginContainer/elements/hearts/heart_2.texture = red_heart
+		$Control/MarginContainer/elements/hearts/heart_3.texture = gray_heart
+	elif n == 1:
+		$Control/MarginContainer/elements/hearts/heart_1.texture = red_heart
+		$Control/MarginContainer/elements/hearts/heart_2.texture = gray_heart
+		$Control/MarginContainer/elements/hearts/heart_3.texture = gray_heart
+	if n == 0:
+		$Control/MarginContainer/elements/hearts/heart_1.texture = gray_heart
+		$Control/MarginContainer/elements/hearts/heart_2.texture = gray_heart
+		$Control/MarginContainer/elements/hearts/heart_3.texture = gray_heart
+	else:
+		print("incorrect life count")
 
 func add_kid(kid):
 	#kid.connect("is_done", self, "kid_done")
