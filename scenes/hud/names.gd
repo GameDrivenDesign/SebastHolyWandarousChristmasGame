@@ -59,12 +59,11 @@ var female_names = [
 	'Zaria', 'Zelda', 'Zella', 'Zelma', 'Zena', 'Zetta', 'Zita', 'Zoe', 'Zoey', 'Zoie', 'Zoila', 'Zola', 'Zora', 'Zula'
 ]
 
-
 func get_random_names(n):
 	var list = range(0, male_names.size() + female_names.size())
 	var sample = []
 	for i in range(n):
-	    var x = randi() % list.size
+	    var x = randi() % list.size()
 	    sample.append(list[x])
 	    list.remove(x)
 	
