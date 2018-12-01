@@ -13,6 +13,7 @@ var target_line = Line2D.new()
 signal gift_count_changed(n)
 
 func _ready():
+	$Light2D.visible = true
 	target_line.add_point(Vector2(0.0, 0.0))
 	target_line.add_point(Vector2(0.0, 0.0))
 	add_child(target_line)
