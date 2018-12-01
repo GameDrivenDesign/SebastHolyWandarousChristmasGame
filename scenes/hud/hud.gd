@@ -12,7 +12,7 @@ onready var bad_children = $Control/MarginContainer/elements/bad_children
 
 func _ready():
 	update_gift_count(0)
-	
+
 	# Delete all example children
 	for child in good_children.get_children():
 		child.queue_free()
@@ -38,12 +38,14 @@ func add_kid(kid):
 	label.add_font_override("font", preload("res://fonts/font20.tres"))
 	label.add_color_override("font_color_shadow", Color("000000"))
 	label.size_flags_horizontal = label.SIZE_EXPAND_FILL
-	
+
 	if kid.is_good_kid:
 		good_children.add_child(label)
 	else:
 		bad_children.add_child(label)
-	
 
 func kid_done(name, is_good_kid, got_present):
 	print("HUD: Kid with name " + name + " is done: good:" + str(is_good_kid) + ", present: " + str(got_present))
+
+func _on_credits_button_pressed():
+	$credits.popup_centered()
