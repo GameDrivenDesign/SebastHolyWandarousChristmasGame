@@ -52,6 +52,8 @@ func _physics_process(delta):
 			var collision_point = collision_info.position
 			var speed = (collision_info.collider_velocity - velocity).length()
 			if speed >= deadly_speed:
+				$aua.pitch_scale = (randi() % 5) * 0.2 + $aua.pitch_scale
+				$aua.playing = true
 				$collision_shape.disabled = true
 				$placeholder_rect.color = Color(0.8, 0, 0)
 				alive = false

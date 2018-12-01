@@ -18,7 +18,7 @@ extents = Vector2( 6.15845, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 8.0004, 10 )
 
-[node name="player" type="RigidBody2D" index="0" groups=[
+[node name="player" type="RigidBody2D" groups=[
 "players",
 ]]
 
@@ -42,7 +42,7 @@ angular_velocity = 0.0
 angular_damp = 2.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Collision", "Linear" ]
-speed = 21
+speed = 20
 rotation_speed = 8.0
 
 [node name="sprite" type="Sprite" parent="." index="0"]
@@ -104,7 +104,7 @@ input_pickable = false
 collision_layer = 32
 collision_mask = 33
 mode = 0
-mass = 0.03
+mass = 0.02
 friction = 0.8
 bounce = 0.0
 gravity_scale = 1.0
