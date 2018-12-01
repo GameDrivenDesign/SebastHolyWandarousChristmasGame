@@ -25,7 +25,7 @@ collision_layer = 1
 collision_mask = 6
 mode = 0
 mass = 0.01
-friction = 1.0
+friction = 0.5
 bounce = 0.0
 gravity_scale = 1.0
 custom_integrator = false
@@ -94,11 +94,12 @@ area_mask = 1
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." index="4"]
 
+position = Vector2( 0, 190 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 mode = 0
-mass = 1.0
+mass = 0.03
 friction = 1.0
 bounce = 0.0
 gravity_scale = 1.0
@@ -109,23 +110,51 @@ contact_monitor = false
 sleeping = false
 can_sleep = true
 linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
+linear_damp = 1.0
 angular_velocity = 0.0
-angular_damp = -1.0
+angular_damp = 1.0
+_sections_unfolded = [ "Angular", "Linear", "Transform" ]
 
 [node name="schlitten" type="Sprite" parent="RigidBody2D" index="0"]
 
 light_mask = 2
-position = Vector2( 9.53674e-07, 169 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" index="1"]
 
-position = Vector2( 6.19888e-05, 175.5 )
+position = Vector2( 0, 7 )
 scale = Vector2( 3.76923, 6.42308 )
 shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="pos_con_santa_l" type="Position2D" parent="RigidBody2D" index="2"]
+
+position = Vector2( -23, -31 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="pos_con_santa_r" type="Position2D" parent="RigidBody2D" index="3"]
+
+position = Vector2( 24.2844, -30.1461 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="." index="5"]
+
+node_a = NodePath("..")
+node_b = NodePath("../RigidBody2D")
+bias = 0.2
+disable_collision = false
+length = 70.0
+rest_length = 0.0
+stiffness = 20.0
+damping = 1.0
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[node name="pos_con_deer" type="Position2D" parent="." index="6"]
+
+position = Vector2( 0, 57 )
+scale = Vector2( 0.3, 0.3 )
 _sections_unfolded = [ "Transform" ]
 
 
