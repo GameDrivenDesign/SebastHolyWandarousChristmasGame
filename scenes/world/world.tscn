@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/world/world.gd" type="Script" id=1]
 [ext_resource path="res://scenes/world/background.png" type="Texture" id=2]
 [ext_resource path="res://scenes/hud/hud.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/snow/snow.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/gift/gift.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/fence/tileset.tres" type="TileSet" id=7]
+[ext_resource path="res://scenes/fence/tileset.tres" type="TileSet" id=6]
 
 [node name="map" type="Node2D"]
 
@@ -50,7 +49,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="player" parent="." index="1" instance=ExtResource( 5 )]
 
-position = Vector2( 200, 200 )
+position = Vector2( 2972.18, 1346.04 )
 _sections_unfolded = [ "Angular", "Collision", "Linear", "Transform" ]
 rotation_speed = 4.5
 
@@ -81,33 +80,12 @@ editor_draw_drag_margin = false
 
 [node name="gifts" type="Node" parent="." index="2"]
 
-[node name="gift" parent="gifts" index="0" instance=ExtResource( 6 )]
-
-position = Vector2( 311, 230 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="gift2" parent="gifts" index="1" instance=ExtResource( 6 )]
-
-position = Vector2( 674, 391 )
-
-[node name="gift3" parent="gifts" index="2" instance=ExtResource( 6 )]
-
-position = Vector2( -18.1649, 81.659 )
-
-[node name="gift4" parent="gifts" index="3" instance=ExtResource( 6 )]
-
-position = Vector2( 282, -99 )
-
-[node name="gift5" parent="gifts" index="4" instance=ExtResource( 6 )]
-
-position = Vector2( 266, 451 )
-
 [node name="dumb_kids" type="Node" parent="." index="3"]
 
 [node name="fences" type="TileMap" parent="." index="4"]
 
 mode = 0
-tile_set = ExtResource( 7 )
+tile_set = ExtResource( 6 )
 cell_size = Vector2( 50, 50 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
