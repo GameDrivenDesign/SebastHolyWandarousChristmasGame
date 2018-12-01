@@ -16,7 +16,7 @@ width = 60
 render_priority = 0
 trail_divisor = 1
 emission_shape = 2
-emission_box_extents = Vector3( 200, 100, 0 )
+emission_box_extents = Vector3( 200, 200, 0 )
 flag_align_y = false
 flag_rotate_y = false
 flag_disable_z = true
@@ -49,11 +49,13 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
+_sections_unfolded = [ "Emission Shape", "Resource" ]
 
 [node name="snow" type="Node2D"]
 
 [node name="Particles2D" type="Particles2D" parent="." index="0"]
 
+scale = Vector2( 2, 2 )
 emitting = true
 amount = 2000
 lifetime = 5.0
@@ -72,5 +74,6 @@ texture = null
 normal_map = null
 h_frames = 1
 v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform" ]
 
 
