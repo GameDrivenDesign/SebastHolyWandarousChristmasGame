@@ -60,7 +60,7 @@ func get_input():
 		gift_count -= 1
 		emit_signal("gift_count_changed", gift_count)
 		
-	if Input.is_action_just_pressed('coal_projectile'):
+	if Input.is_action_just_pressed('coal_projectile') or (Input.is_action_pressed('coal_projectile') and Input.is_action_pressed('coal_projectile_full_auto_modifier')):
 		var mouse = get_global_mouse_position()
 		var coal_direction = mouse - global_position
 		var coal_projectile = preload('res://scenes/coal/coal_projectile.tscn').instance()

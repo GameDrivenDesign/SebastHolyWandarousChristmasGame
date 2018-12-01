@@ -6,11 +6,11 @@ export (int) var min_distance = 600
 export (int) var deadly_speed = 350
 
 var velocity = Vector2()
-var alive = true
+export (bool) var alive = true
 
 var player
 
-var is_good_kid = true
+export (bool) var is_good_kid = true
 
 signal is_done(name, is_good_kid, got_present)
 

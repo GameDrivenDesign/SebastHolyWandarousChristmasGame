@@ -21,6 +21,8 @@ _sections_unfolded = [ "Collision", "collision" ]
 max_speed = 200
 min_distance = 600
 deadly_speed = 350
+alive = true
+is_good_kid = true
 
 [node name="placeholder_rect" type="ColorRect" parent="." index="0"]
 

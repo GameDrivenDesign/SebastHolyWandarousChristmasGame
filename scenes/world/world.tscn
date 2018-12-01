@@ -8,7 +8,7 @@
 [ext_resource path="res://scenes/gift/gift.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/dumb_kid/dumb_kid.tscn" type="PackedScene" id=7]
 
-[node name="map" type="Node2D" index="0"]
+[node name="map" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -105,18 +105,26 @@ position = Vector2( 266, 451 )
 [node name="dumb_kid" parent="dumb_kids" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 85.2212, 632.732 )
+alive = true
+is_good_kid = true
 
 [node name="dumb_kid2" parent="dumb_kids" index="1" instance=ExtResource( 7 )]
 
 position = Vector2( 829.847, 415.675 )
+alive = true
+is_good_kid = true
 
 [node name="dumb_kid3" parent="dumb_kids" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 694.187, 555.858 )
+alive = true
+is_good_kid = true
 
 [node name="dumb_kid4" parent="dumb_kids" index="3" instance=ExtResource( 7 )]
 
 position = Vector2( 538.931, 62.9573 )
+alive = true
+is_good_kid = true
 
 [connection signal="gift_count_changed" from="player" to="ParallaxBackground/ParallaxLayer/hud" method="update_gift_count"]
 
