@@ -21,10 +21,11 @@ func _ready():
 		kid.connect("is_done", self, "kid_done")
 	
 	var trees = $trees
+	var gifts = $gifts
 	
 	var map_size = Vector2(120*50, 100*50)
-	var quadrant_size = 6 * 50
 	
+	var quadrant_size = 6 * 50
 	for xi in range(map_size.x / quadrant_size):
 		for yi in range(map_size.y / quadrant_size):
 			if randi() % 100 > 50:
@@ -34,6 +35,17 @@ func _ready():
 					yi * quadrant_size + rand_range(0, quadrant_size / 2)
 				)
 				trees.add_child(tree)
+	
+	quadrant_size = 3 * 50
+	for xi in range(map_size.x / quadrant_size):
+		for yi in range(map_size.y / quadrant_size):
+			if randi() % 100 > 85:
+				var gift = preload("res://scenes/gift/gift.tscn").instance()
+				gift.global_position = Vector2(
+					xi * quadrant_size + rand_range(0, quadrant_size / 2),
+					yi * quadrant_size + rand_range(0, quadrant_size / 2)
+				)
+				gifts.add_child(gift)
 
 func kid_done(name, is_good_kid, got_present):
 	print("World: Kid with name " + name + " is done: good:" + str(is_good_kid) + ", present: " + str(got_present))
