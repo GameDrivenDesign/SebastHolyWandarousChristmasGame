@@ -59,6 +59,15 @@ func get_input():
 		
 		gift_count -= 1
 		emit_signal("gift_count_changed", gift_count)
+		
+	if Input.is_action_just_pressed('coal_projectile'):
+		var mouse = get_global_mouse_position()
+		var coal_direction = mouse - global_position
+		var coal_projectile = preload('res://scenes/coal/coal_projectile.tscn').instance()
+		coal_projectile.position = position
+		coal_projectile.rotation = coal_direction.angle() + PI/2
+		coal_projectile.apply_impulse(Vector2(0.0, 0.0), coal_direction * 5)
+		get_parent().add_child(coal_projectile)
 
 func _physics_process(delta):
 	get_input()

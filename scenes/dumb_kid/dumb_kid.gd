@@ -12,7 +12,7 @@ var player
 
 var is_good_kid = true
 
-signal is_done(name, success)
+signal is_done(name, is_good_kid, got_present)
 
 func _ready():
 	player = get_parent().get_parent().get_node("player")
@@ -38,14 +38,14 @@ func _physics_process(delta):
 	var collision_info = move_and_collide(velocity * delta)
 	if collision_info:
 		var collider = collision_info.collider
-		if "players" in collider.get_groups():
+		if "players" in collider.get_groups() or "coal_projectile" in collider.get_groups():
 			var collision_point = collision_info.position
 			var speed = (collision_info.collider_velocity - velocity).length()
 			if speed >= deadly_speed:
 				$collision_shape.disabled = true
 				$placeholder_rect.color = Color(0.8, 0, 0)
 				alive = false
-				emit_signal("is_done", $name_container/name.text, false)
+				emit_signal("is_done", $name_container/name.text, is_good_kid, false)
 		if "gift_projectiles" in collider.get_groups():
 			var collision_point = collision_info.position
 			var speed = (collision_info.collider_velocity - velocity).length()
@@ -53,10 +53,7 @@ func _physics_process(delta):
 			$placeholder_rect.color = Color(0.0, 0.8, 0)
 			alive = false
 			collider.queue_free()
-			emit_signal("is_done", $name_container/name.text, is_good_kid)
-
-		# TODO: If hit by coal
-		# emit_signal("is_done", $name.text, not is_good_kid)
+			emit_signal("is_done", $name_container/name.text, is_good_kid, true)
 
 func set_name(name):
 	$name_container/name.text = name

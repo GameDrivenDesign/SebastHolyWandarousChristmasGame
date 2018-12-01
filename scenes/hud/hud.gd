@@ -45,5 +45,5 @@ func add_kid(kid):
 		bad_children.add_child(label)
 	
 
-func kid_done(name, success):
-	print("HUD: Kid with name " + name + " is done: " + str(success))
+func kid_done(name, is_good_kid, got_present):
+	print("HUD: Kid with name " + name + " is done: good:" + str(is_good_kid) + ", present: " + str(got_present))
