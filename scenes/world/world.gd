@@ -19,6 +19,21 @@ func _ready():
 		kid.set_is_good_kid(bool(randi() % 2))
 		hud.add_kid(kid)
 		kid.connect("is_done", self, "kid_done")
+	
+	var trees = $trees
+	
+	var map_size = Vector2(120*50, 100*50)
+	var quadrant_size = 6 * 50
+	
+	for xi in range(map_size.x / quadrant_size):
+		for yi in range(map_size.y / quadrant_size):
+			if randi() % 100 > 50:
+				var tree = preload("res://scenes/tree/tree.tscn").instance()
+				tree.global_position = Vector2(
+					xi * quadrant_size + rand_range(0, quadrant_size / 2),
+					yi * quadrant_size + rand_range(0, quadrant_size / 2)
+				)
+				trees.add_child(tree)
 
 func kid_done(name, is_good_kid, got_present):
 	print("World: Kid with name " + name + " is done: good:" + str(is_good_kid) + ", present: " + str(got_present))
