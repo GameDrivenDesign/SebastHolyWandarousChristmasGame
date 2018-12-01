@@ -4,6 +4,8 @@ onready var name_generator = preload("res://scenes/hud/names.gd").new()
 onready var hud = $ParallaxBackground/ParallaxLayer/hud
 
 func _ready():
+	randomize()
+	
 	var kids = get_tree().get_nodes_in_group("dumb_kids")
 	
 	var names = name_generator.get_random_names(kids.size())
