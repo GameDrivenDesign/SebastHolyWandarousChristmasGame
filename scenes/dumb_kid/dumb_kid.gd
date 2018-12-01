@@ -59,5 +59,8 @@ func _physics_process(delta):
 func set_name(name):
 	$name.text = name
 
+func get_name():
+	return $name.text
+
 func set_is_good_kid(is_good):
 	is_good_kid = is_good
