@@ -37,11 +37,12 @@ coal_projectile_full_auto_modifier=[ Object(InputEventKey,"resource_local_to_sce
 
 [layer_names]
 
-2d_physics/layer_1="player"
+2d_physics/layer_1="environment"
 2d_physics/layer_2="dumb_kid"
 2d_physics/layer_3="gift"
 2d_physics/layer_4="gift_projectile"
 2d_physics/layer_5="coal_projectile"
+2d_physics/layer_6="player"
 
 [physics]
 

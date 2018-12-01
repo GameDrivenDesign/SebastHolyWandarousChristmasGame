@@ -8,13 +8,13 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10.5505, 10 )
 
-[node name="gift_projectile" type="RigidBody2D" groups=[
+[node name="gift_projectile" type="RigidBody2D" index="0" groups=[
 "gift_projectiles",
 ]]
 
 input_pickable = false
 collision_layer = 8
-collision_mask = 14
+collision_mask = 15
 mode = 0
 mass = 1.0
 friction = 1.0

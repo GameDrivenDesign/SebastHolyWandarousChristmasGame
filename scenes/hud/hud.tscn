@@ -6,7 +6,7 @@
 [ext_resource path="res://theme.tres" type="Theme" id=4]
 [ext_resource path="res://scenes/credits/credits.tscn" type="PackedScene" id=5]
 
-[node name="hud" type="Node" index="0"]
+[node name="hud" type="Node"]
 
 script = ExtResource( 1 )
 
