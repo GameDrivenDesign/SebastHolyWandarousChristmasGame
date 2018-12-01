@@ -15,12 +15,19 @@ export (bool) var is_good_kid = true
 
 signal is_done(name, is_good_kid, got_present)
 
+const images = [
+	preload("res://scenes/dumb_kid/kid_blue.svg"),
+	preload("res://scenes/dumb_kid/kid_green.svg"),
+	preload("res://scenes/dumb_kid/kid_red.svg")
+]
+
 func _ready():
 	player = get_parent().get_parent().get_node("player")
+	$Sprite.set_texture(images[randi() % images.size()])
 
 func _process(delta):
 	velocity = Vector2(0.0, 0.0)
-	
+		
 	if !alive:
 		return
 	
