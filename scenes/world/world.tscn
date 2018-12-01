@@ -8,7 +8,7 @@
 [ext_resource path="res://scenes/gift/gift.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/fence/tileset.tres" type="TileSet" id=7]
 
-[node name="map" type="Node2D"]
+[node name="map" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -126,5 +126,7 @@ tile_data = PoolIntArray( -262148, -1610612736, 0, -262147, -1610612736, 0, -262
 [node name="trees" type="Node" parent="." index="5"]
 
 [connection signal="gift_count_changed" from="player" to="ParallaxBackground/ParallaxLayer/hud" method="update_gift_count"]
+
+[connection signal="life_count_changed" from="player" to="ParallaxBackground/ParallaxLayer/hud" method="update_life_count"]
 
 

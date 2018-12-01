@@ -18,7 +18,7 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 8.0004, 10 )
 
-[node name="player" type="RigidBody2D" index="0" groups=[
+[node name="player" type="RigidBody2D" groups=[
 "players",
 ]]
 
@@ -44,6 +44,7 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Collision", "Linear" ]
 speed = 21
 rotation_speed = 4.5
+life_count = 3
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 

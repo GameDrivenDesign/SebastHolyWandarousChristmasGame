@@ -2,6 +2,7 @@ extends RigidBody2D
 
 export (int) var speed = 10
 export (float) var rotation_speed = 4.5
+export (int) var life_count = 3
 
 var velocity = Vector2()
 var rotation_dir = 0
@@ -15,6 +16,7 @@ var reins1_line = Line2D.new()
 var reins2_line = Line2D.new()
 
 signal gift_count_changed(n)
+signal life_count_changed(n)
 
 func _ready():
 	$Light2D.visible = true
@@ -112,3 +114,10 @@ func pickup_gift():
 
 func flash_siren():
 	$siren.flash(5)
+
+# will be called by world
+func kid_done(name, is_good_kid, got_present):
+	if is_good_kid and !got_present:
+		flash_siren()
+		life_count -= 1
+		emit_signal("life_count_changed" ,life_count)
