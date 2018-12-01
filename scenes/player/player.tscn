@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 6.15845, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -41,7 +41,7 @@ angular_damp = 2.0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Angular", "Collision", "Linear" ]
 speed = 21
-rotation_speed = 4.5
+rotation_speed = 8.0
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 
@@ -52,7 +52,7 @@ _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
 [node name="collision_shape" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 1.50006, 11.6833 )
+position = Vector2( 1.01239, -21.4786 )
 scale = Vector2( 2.42308, 2.28333 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -103,7 +103,7 @@ collision_layer = 32
 collision_mask = 33
 mode = 0
 mass = 0.03
-friction = 0.7
+friction = 0.8
 bounce = 0.0
 gravity_scale = 1.0
 custom_integrator = false
@@ -150,8 +150,8 @@ bias = 0.5
 disable_collision = false
 length = 55.0
 rest_length = 0.0
-stiffness = 10.0
-damping = 0.7
+stiffness = 3.0
+damping = 0.01
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="pos_con_deer" type="Position2D" parent="." index="6"]
