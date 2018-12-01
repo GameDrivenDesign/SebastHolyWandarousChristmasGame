@@ -1,20 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/dumb_kid/dumb_kid.gd" type="Script" id=1]
 [ext_resource path="res://fonts/font20.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scenes/dumb_kid/kid_blue.svg" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="dumb_kid" type="KinematicBody2D" groups=[
+[node name="dumb_kid" type="KinematicBody2D" index="0" groups=[
 "dumb_kids",
 ]]
 
 input_pickable = false
 collision_layer = 2
-collision_mask = 27
+collision_mask = 59
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "collision" ]
@@ -72,5 +73,12 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="Sprite" type="Sprite" parent="." index="3"]
+
+rotation = 1.5708
+scale = Vector2( 0.0505527, 0.0505527 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
 
 
