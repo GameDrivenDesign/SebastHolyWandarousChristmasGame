@@ -82,6 +82,11 @@ func kid_done(name, is_good_kid, got_present):
 
 func update_kid_display():
 	hud.remove_all_dumb_kids()
+	var all_good_kids_happy = true
 	for i in range(kids.size()):
 		var kid = kids[i]
 		hud.add_kid(kid)
+		if !kid.got_gift:
+			all_good_kids_happy = false
+	if all_good_kids_happy:
+		get_tree().change_scene("res://scenes/end/end_scene.tscn")

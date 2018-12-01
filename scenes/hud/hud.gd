@@ -15,6 +15,11 @@ func _ready():
 
 	# Delete all example children
 	remove_all_dumb_kids()
+	
+	#var game_over_scene = preload("res://scenes/end/end_scene.tscn").instance()
+	#game_over_scene.get_node("Label").text = "You lost"
+	#get_tree().change_scene("res://scenes/end/end_scene.tscn")
+	#get_tree().root.get_node("Node").get_node("Label").text = "You lost"
 
 func _process(delta):
 	time -= delta
@@ -22,6 +27,7 @@ func _process(delta):
 		emit_signal("time_up")
 		set_process(false)
 		time = 0
+		get_tree().change_scene("res://scenes/end/fail_scene.tscn")
 
 	timer.text = 'Time remaining: ' + str(round(time))
 
@@ -48,9 +54,7 @@ func update_life_count(n):
 		$Control/MarginContainer/elements/hearts/heart_1.texture = gray_heart
 		$Control/MarginContainer/elements/hearts/heart_2.texture = gray_heart
 		$Control/MarginContainer/elements/hearts/heart_3.texture = gray_heart
-		var game_over_scene = preload("res://scenes/end/end_scene.tscn").instance()
-		game_over_scene.get_node("Label").text = "You lost"
-		get_tree().change_scene_to(game_over_scene)
+		get_tree().change_scene("res://scenes/end/fail_scene.tscn")
 	else:
 		print("incorrect life count")
 
